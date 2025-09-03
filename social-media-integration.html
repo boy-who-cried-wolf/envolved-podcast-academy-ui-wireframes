@@ -48,13 +48,17 @@
             min-height: 600px;
         }
         .nav-item {
-            /* border-bottom: 2px solid #000; */
             padding: 10px;
             margin: 5px 0;
             cursor: pointer;
         }
         .nav-item.active {
             background: #f0f0f0;
+        }
+        .nav-item a {
+            text-decoration: none;
+            color: black;
+            display: block;
         }
         .main-content {
             padding: 20px;
@@ -207,11 +211,11 @@
 
         <div class="main-layout">
             <div class="sidebar">
-                <div class="nav-item">Dashboard</div>
-                <div class="nav-item">Content</div>
+                <div class="nav-item"><a href="dashboard.html">Dashboard</a></div>
+                <div class="nav-item"><a href="content-management.html">Content</a></div>
                 <div class="nav-item active">Social Media</div>
                 <div class="nav-item">Analytics</div>
-                <div class="nav-item">Settings</div>
+                <div class="nav-item"><a href="user-profile-settings.html">Settings</a></div>
             </div>
 
             <div class="main-content">

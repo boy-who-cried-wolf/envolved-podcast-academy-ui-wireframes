@@ -48,13 +48,17 @@
             min-height: 600px;
         }
         .nav-item {
-            /* border-bottom: 2px solid #000; */
             padding: 10px;
             margin: 5px 0;
             cursor: pointer;
         }
         .nav-item.active {
             background: #f0f0f0;
+        }
+        .nav-item a {
+            text-decoration: none;
+            color: black;
+            display: block;
         }
         .main-content {
             padding: 20px;
@@ -211,6 +215,16 @@
             height: 20px;
             display: inline-block;
         }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: 1px solid #000;
+            padding: 5px 10px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
     </style>
 </head>
 <body>
@@ -224,11 +238,11 @@
 
         <div class="main-layout">
             <div class="sidebar">
-                <div class="nav-item">Dashboard</div>
+                <div class="nav-item"><a href="dashboard.html">Dashboard</a></div>
                 <div class="nav-item active">Content</div>
-                <div class="nav-item">Social Media</div>
+                <div class="nav-item"><a href="social-media-integration.html">Social Media</a></div>
                 <div class="nav-item">Analytics</div>
-                <div class="nav-item">Settings</div>
+                <div class="nav-item"><a href="user-profile-settings.html">Settings</a></div>
             </div>
 
             <div class="main-content">
@@ -326,8 +340,9 @@
         </div>
 
         <!-- Approval Modal -->
-        <div class="modal-overlay">
+        <div class="modal-overlay" id="modalOverlay" style="display: none;">
             <div class="modal">
+                <div class="close-button" onclick="hideModal()">✕</div>
                 <h3>Content Approval</h3>
                 <div class="content-thumbnail" style="height: 200px;">Video Preview</div>
                 <div class="content-title">How to Start a Podcast</div>
@@ -338,10 +353,16 @@
                 <div style="display: flex; gap: 10px; justify-content: center;">
                     <div class="upload-button">Approve</div>
                     <div class="upload-button">Reject</div>
-                    <div class="upload-button">Cancel</div>
+                    <div class="upload-button" onclick="hideModal()">Cancel</div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        function hideModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+    </script>
 </body>
 </html>

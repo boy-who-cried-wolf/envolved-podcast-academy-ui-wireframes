@@ -48,13 +48,17 @@
             min-height: 600px;
         }
         .nav-item {
-            /* border-bottom: 2px solid #000; */
             padding: 10px;
             margin: 5px 0;
             cursor: pointer;
         }
         .nav-item.active {
             background: #f0f0f0;
+        }
+        .nav-item a {
+            text-decoration: none;
+            color: black;
+            display: block;
         }
         .main-content {
             padding: 20px;
@@ -72,7 +76,6 @@
             background: #f9f9f9;
         }
         .plan-badge {
-            /* border-bottom: 2px solid #000; */
             padding: 5px 15px;
             background: #000;
             color: white;
@@ -95,6 +98,18 @@
             border: 3px solid #000;
             background: #f0f0f0;
         }
+        .plan-card.current::before {
+            content: 'CURRENT PLAN';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
         .plan-name {
             padding: 10px;
             font-size: 1.2em;
@@ -108,7 +123,6 @@
             margin-bottom: 15px;
         }
         .plan-features {
-            /* border-bottom: 2px solid #000; */
             padding: 15px;
             margin-bottom: 20px;
             text-align: left;
@@ -149,7 +163,6 @@
             gap: 10px;
         }
         .card-icon {
-            /* border-bottom: 2px solid #000; */
             width: 30px;
             height: 20px;
             display: flex;
@@ -177,7 +190,6 @@
             font-weight: bold;
         }
         .invoice-status {
-            /* border-bottom: 2px solid #000; */
             padding: 5px 10px;
             font-size: 0.8em;
         }
@@ -248,6 +260,16 @@
             bottom: 0;
             background: rgba(0,0,0,0.3);
         }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: 1px solid #000;
+            padding: 5px 10px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
     </style>
 </head>
 <body>
@@ -261,11 +283,11 @@
 
         <div class="main-layout">
             <div class="sidebar">
-                <div class="nav-item">Dashboard</div>
-                <div class="nav-item">Content</div>
-                <div class="nav-item">Social Media</div>
+                <div class="nav-item"><a href="dashboard.html">Dashboard</a></div>
+                <div class="nav-item"><a href="content-management.html">Content</a></div>
+                <div class="nav-item"><a href="social-media-integration.html">Social Media</a></div>
                 <div class="nav-item">Analytics</div>
-                <div class="nav-item">Settings</div>
+                <div class="nav-item"><a href="user-profile-settings.html">Settings</a></div>
                 <div class="nav-item active">Billing</div>
             </div>
 
@@ -360,7 +382,7 @@
                         <div class="form-button">Remove</div>
                     </div>
                     
-                    <div class="form-button">Add Payment Method</div>
+                    <div class="form-button" onclick="showModal()">Add Payment Method</div>
                 </div>
 
                 <!-- Billing History -->
@@ -393,8 +415,9 @@
                 </div>
 
                 <!-- Add Payment Method Modal -->
-                <div class="modal-overlay">
+                <div class="modal-overlay" id="modalOverlay" style="display: none;">
                     <div class="modal">
+                        <div class="close-button" onclick="hideModal()">✕</div>
                         <h3>Add Payment Method</h3>
                         
                         <div class="form-group">
@@ -420,12 +443,22 @@
                         
                         <div style="display: flex; gap: 10px; justify-content: center;">
                             <div class="form-button">Save</div>
-                            <div class="form-button">Cancel</div>
+                            <div class="form-button" onclick="hideModal()">Cancel</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        function showModal() {
+            document.getElementById('modalOverlay').style.display = 'block';
+        }
+        
+        function hideModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
