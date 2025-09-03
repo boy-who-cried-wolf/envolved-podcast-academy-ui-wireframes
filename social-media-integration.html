@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Integration Wireframes</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .wireframe {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #000;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            border-bottom: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            padding: 10px;
+            font-weight: bold;
+        }
+        .user-menu {
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .main-layout {
+            display: flex;
+            gap: 20px;
+        }
+        .sidebar {
+            border-right: 2px solid #000;
+            padding: 20px;
+            width: 250px;
+            min-height: 600px;
+        }
+        .nav-item {
+            /* border-bottom: 2px solid #000; */
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        .nav-item.active {
+            background: #f0f0f0;
+        }
+        .main-content {
+            padding: 20px;
+            flex: 1;
+        }
+        .page-title {
+            padding: 15px;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .platform-card {
+            border: 2px solid #000;
+            padding: 20px;
+        }
+        .platform-header {
+            border-bottom: 1px solid #000;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .platform-icon {
+            /* border-bottom: 2px solid #000; */
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .platform-name {
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+        .connection-status {
+            /* border-bottom: 2px solid #000; */
+            padding: 5px 10px;
+            font-size: 0.8em;
+        }
+        .status-connected {
+            background: #d4edda;
+        }
+        .status-disconnected {
+            background: #f8d7da;
+        }
+        .platform-actions {
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .action-btn {
+            /* border-bottom: 2px solid #000; */
+            padding: 5px 10px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
+        .publishing-section {
+            border: 2px solid #000;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .content-preview {
+            /* border-bottom: 2px solid #000; */
+            padding: 15px;
+            margin: 15px 0;
+            background: #f9f9f9;
+        }
+        .platform-selector {
+            border: 2px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .platform-checkbox {
+            padding: 10px;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .checkbox {
+            /* border-bottom: 2px solid #000; */
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+        .publish-button {
+            border: 2px solid #000;
+            padding: 15px 30px;
+            background: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .schedule-section {
+            border: 2px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .date-time-input {
+            /* border-bottom: 2px solid #000; */
+            padding: 8px;
+            background: white;
+            margin: 5px;
+        }
+        .analytics-section {
+            border: 2px solid #000;
+            padding: 20px;
+        }
+        .metric-card {
+            border-bottom: 1px solid #000;
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .metric-value {
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+        .error-message {
+            /* border-bottom: 2px solid #000; */
+            padding: 10px;
+            margin: 10px 0;
+            background: #f8d7da;
+        }
+        .success-message {
+            /* border-bottom: 2px solid #000; */
+            padding: 10px;
+            margin: 10px 0;
+            background: #d4edda;
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe">
+        <div class="header">
+            <div class="logo">LOGO</div>
+            <div class="user-menu">
+                <div>John Doe</div>
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <div class="sidebar">
+                <div class="nav-item">Dashboard</div>
+                <div class="nav-item">Content</div>
+                <div class="nav-item active">Social Media</div>
+                <div class="nav-item">Analytics</div>
+                <div class="nav-item">Settings</div>
+            </div>
+
+            <div class="main-content">
+                <div class="page-title">Social Media Integration</div>
+
+                <!-- Platform Connections -->
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon">YT</div>
+                            <div class="platform-name">YouTube</div>
+                            <div class="connection-status status-connected">Connected</div>
+                        </div>
+                        <div class="platform-actions">
+                            <div class="action-btn">Disconnect</div>
+                            <div class="action-btn">Refresh</div>
+                            <div class="action-btn">Settings</div>
+                        </div>
+                    </div>
+
+                    <div class="platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon">IG</div>
+                            <div class="platform-name">Instagram</div>
+                            <div class="connection-status status-connected">Connected</div>
+                        </div>
+                        <div class="platform-actions">
+                            <div class="action-btn">Disconnect</div>
+                            <div class="action-btn">Refresh</div>
+                            <div class="action-btn">Settings</div>
+                        </div>
+                    </div>
+
+                    <div class="platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon">TT</div>
+                            <div class="platform-name">TikTok</div>
+                            <div class="connection-status status-disconnected">Disconnected</div>
+                        </div>
+                        <div class="platform-actions">
+                            <div class="action-btn">Connect</div>
+                            <div class="action-btn">Settings</div>
+                        </div>
+                    </div>
+
+                    <div class="platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon">TW</div>
+                            <div class="platform-name">Twitter/X</div>
+                            <div class="connection-status status-connected">Connected</div>
+                        </div>
+                        <div class="platform-actions">
+                            <div class="action-btn">Disconnect</div>
+                            <div class="action-btn">Refresh</div>
+                            <div class="action-btn">Settings</div>
+                        </div>
+                    </div>
+
+                    <div class="platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon">FB</div>
+                            <div class="platform-name">Facebook</div>
+                            <div class="connection-status status-disconnected">Disconnected</div>
+                        </div>
+                        <div class="platform-actions">
+                            <div class="action-btn">Connect</div>
+                            <div class="action-btn">Settings</div>
+                        </div>
+                    </div>
+
+                    <div class="platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon">LI</div>
+                            <div class="platform-name">LinkedIn</div>
+                            <div class="connection-status status-connected">Connected</div>
+                        </div>
+                        <div class="platform-actions">
+                            <div class="action-btn">Disconnect</div>
+                            <div class="action-btn">Refresh</div>
+                            <div class="action-btn">Settings</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publishing Interface -->
+                <div class="publishing-section">
+                    <h3>Publish Content</h3>
+                    
+                    <div class="content-preview">
+                        <h4>Content Preview</h4>
+                        <p>How to Start a Podcast - Episode 15</p>
+                        <p>Learn the essential steps to launch your own successful podcast...</p>
+                        <div style="/* border-bottom: 2px solid #000; */ height: 100px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                            Video Thumbnail
+                        </div>
+                    </div>
+
+                    <div class="platform-selector">
+                        <h4>Select Platforms</h4>
+                        <div class="platform-checkbox">
+                            <div class="checkbox"></div>
+                            <span>YouTube</span>
+                        </div>
+                        <div class="platform-checkbox">
+                            <div class="checkbox"></div>
+                            <span>Instagram</span>
+                        </div>
+                        <div class="platform-checkbox">
+                            <div class="checkbox"></div>
+                            <span>Twitter/X</span>
+                        </div>
+                        <div class="platform-checkbox">
+                            <div class="checkbox"></div>
+                            <span>LinkedIn</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-section">
+                        <h4>Schedule Post</h4>
+                        <input type="datetime-local" class="date-time-input" value="2024-01-15T10:00">
+                        <div class="publish-button">Schedule Post</div>
+                        <div class="publish-button">Publish Now</div>
+                    </div>
+                </div>
+
+                <!-- Analytics -->
+                <div class="analytics-section">
+                    <h3>Platform Analytics</h3>
+                    
+                    <div class="metric-card">
+                        <span>Total Posts Published</span>
+                        <div class="metric-value">24</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <span>Total Views</span>
+                        <div class="metric-value">1,247</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <span>Total Engagement</span>
+                        <div class="metric-value">89</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <span>Best Performing Platform</span>
+                        <div class="metric-value">YouTube</div>
+                    </div>
+                </div>
+
+                <!-- Error Messages -->
+                <div class="error-message">
+                    Instagram token expired. Please reconnect your account.
+                </div>
+                
+                <div class="success-message">
+                    Content successfully published to 4 platforms!
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

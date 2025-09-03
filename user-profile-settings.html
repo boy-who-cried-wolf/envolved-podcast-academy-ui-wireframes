@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile & Settings Wireframes</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .wireframe {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #000;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            border-bottom: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            padding: 10px;
+            font-weight: bold;
+        }
+        .user-menu {
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .main-layout {
+            display: flex;
+            gap: 20px;
+        }
+        .sidebar {
+            border-right: 2px solid #000;
+            padding: 20px;
+            width: 250px;
+            min-height: 600px;
+        }
+        .nav-item {
+            /* border-bottom: 2px solid #000; */
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        .nav-item.active {
+            background: #f0f0f0;
+        }
+        .main-content {
+            padding: 20px;
+            flex: 1;
+        }
+        .page-title {
+            padding: 15px;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .profile-header {
+            border: 2px solid #000;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            background: #f9f9f9;
+        }
+        .avatar {
+            border: 2px solid #000;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            background: white;
+        }
+        .profile-name {
+            padding: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .profile-email {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .settings-section {
+            border: 2px solid #000;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            padding: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #000;
+        }
+        .form-group {
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .form-label {
+            padding: 5px;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-input {
+            border: 2px solid #000;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            background: white;
+        }
+        .form-textarea {
+            border: 2px solid #000;
+            padding: 10px;
+            width: 100%;
+            height: 100px;
+            box-sizing: border-box;
+            background: white;
+            resize: vertical;
+        }
+        .form-button {
+            border: 2px solid #000;
+            padding: 15px 30px;
+            background: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .toggle-switch {
+            border: 2px solid #000;
+            width: 50px;
+            height: 25px;
+            background: white;
+            position: relative;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .toggle-switch.active {
+            background: #000;
+        }
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #000;
+            top: 2px;
+            left: 2px;
+        }
+        .toggle-switch.active::after {
+            left: 28px;
+            background: white;
+        }
+        .setting-item {
+            border-bottom: 1px solid #000;
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .setting-description {
+            padding: 5px;
+            font-size: 0.9em;
+        }
+        .security-item {
+            border-bottom: 1px solid #000;
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .status-badge {
+            /* border-bottom: 2px solid #000; */
+            padding: 5px 10px;
+            font-size: 0.8em;
+        }
+        .status-enabled {
+            background: #d4edda;
+        }
+        .status-disabled {
+            background: #f8d7da;
+        }
+        .activity-item {
+            border-bottom: 1px solid #000;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .activity-time {
+            padding: 5px;
+            font-size: 0.8em;
+            color: #666;
+        }
+        .platform-preferences {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .platform-pref {
+            /* border-bottom: 2px solid #000; */
+            padding: 15px;
+            text-align: center;
+        }
+        .platform-icon {
+            /* border-bottom: 2px solid #000; */
+            width: 30px;
+            height: 30px;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .save-button {
+            border: 2px solid #000;
+            padding: 15px 30px;
+            background: #000;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe">
+        <div class="header">
+            <div class="logo">LOGO</div>
+            <div class="user-menu">
+                <div>John Doe</div>
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <div class="sidebar">
+                <div class="nav-item">Dashboard</div>
+                <div class="nav-item">Content</div>
+                <div class="nav-item">Social Media</div>
+                <div class="nav-item">Analytics</div>
+                <div class="nav-item active">Settings</div>
+                <div class="nav-item">Billing</div>
+            </div>
+
+            <div class="main-content">
+                <div class="page-title">Profile & Settings</div>
+
+                <!-- Profile Header -->
+                <div class="profile-header">
+                    <div class="avatar">JD</div>
+                    <div class="profile-name">John Doe</div>
+                    <div class="profile-email">john.doe@example.com</div>
+                    <div class="form-button">Change Avatar</div>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="settings-section">
+                    <div class="section-title">Personal Information</div>
+                    
+                    <div class="form-group">
+                        <div class="form-label">Full Name</div>
+                        <input type="text" class="form-input" value="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-label">Email Address</div>
+                        <input type="email" class="form-input" value="john.doe@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-label">Phone Number</div>
+                        <input type="tel" class="form-input" value="+1 (555) 123-4567">
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-label">Bio</div>
+                        <textarea class="form-textarea" placeholder="Tell us about yourself...">Podcast creator and content strategist with 5+ years of experience in digital media.</textarea>
+                    </div>
+                    
+                    <div class="form-button">Save Changes</div>
+                </div>
+
+                <!-- Security Settings -->
+                <div class="settings-section">
+                    <div class="section-title">Security</div>
+                    
+                    <div class="security-item">
+                        <div>
+                            <div class="form-label">Two-Factor Authentication</div>
+                            <div class="setting-description">Add an extra layer of security to your account</div>
+                        </div>
+                        <div class="status-badge status-enabled">Enabled</div>
+                    </div>
+                    
+                    <div class="security-item">
+                        <div>
+                            <div class="form-label">Password</div>
+                            <div class="setting-description">Last changed 30 days ago</div>
+                        </div>
+                        <div class="form-button">Change Password</div>
+                    </div>
+                    
+                    <div class="security-item">
+                        <div>
+                            <div class="form-label">Active Sessions</div>
+                            <div class="setting-description">Manage your logged-in devices</div>
+                        </div>
+                        <div class="form-button">View Sessions</div>
+                    </div>
+                </div>
+
+                <!-- Notification Preferences -->
+                <div class="settings-section">
+                    <div class="section-title">Notification Preferences</div>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="form-label">Email Notifications</div>
+                            <div class="setting-description">Receive updates via email</div>
+                        </div>
+                        <div class="toggle-switch active"></div>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="form-label">Push Notifications</div>
+                            <div class="setting-description">Get notified in real-time</div>
+                        </div>
+                        <div class="toggle-switch"></div>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="form-label">Weekly Reports</div>
+                            <div class="setting-description">Receive weekly performance summaries</div>
+                        </div>
+                        <div class="toggle-switch active"></div>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="form-label">Marketing Emails</div>
+                            <div class="setting-description">Receive product updates and offers</div>
+                        </div>
+                        <div class="toggle-switch"></div>
+                    </div>
+                </div>
+
+                <!-- Platform Preferences -->
+                <div class="settings-section">
+                    <div class="section-title">Platform Preferences</div>
+                    
+                    <div class="platform-preferences">
+                        <div class="platform-pref">
+                            <div class="platform-icon">YT</div>
+                            <div class="form-label">YouTube</div>
+                            <div class="toggle-switch active"></div>
+                        </div>
+                        
+                        <div class="platform-pref">
+                            <div class="platform-icon">IG</div>
+                            <div class="form-label">Instagram</div>
+                            <div class="toggle-switch active"></div>
+                        </div>
+                        
+                        <div class="platform-pref">
+                            <div class="platform-icon">TT</div>
+                            <div class="form-label">TikTok</div>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        
+                        <div class="platform-pref">
+                            <div class="platform-icon">TW</div>
+                            <div class="form-label">Twitter/X</div>
+                            <div class="toggle-switch active"></div>
+                        </div>
+                        
+                        <div class="platform-pref">
+                            <div class="platform-icon">FB</div>
+                            <div class="form-label">Facebook</div>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        
+                        <div class="platform-pref">
+                            <div class="platform-icon">LI</div>
+                            <div class="form-label">LinkedIn</div>
+                            <div class="toggle-switch active"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Activity -->
+                <div class="settings-section">
+                    <div class="section-title">Account Activity</div>
+                    
+                    <div class="activity-item">
+                        <div>Password changed</div>
+                        <div class="activity-time">2 days ago</div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div>Two-factor authentication enabled</div>
+                        <div class="activity-time">1 week ago</div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div>LinkedIn account connected</div>
+                        <div class="activity-time">2 weeks ago</div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div>Profile information updated</div>
+                        <div class="activity-time">1 month ago</div>
+                    </div>
+                </div>
+
+                <div class="save-button">Save All Changes</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

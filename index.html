@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Academy Platform - Wireframes Index</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #000;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            border: 2px solid #000;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .title {
+            /* border-bottom: 2px solid #000; */
+            padding: 15px;
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            /* border-bottom: 2px solid #000; */
+            padding: 10px;
+            font-size: 1.2em;
+        }
+        .wireframes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .wireframe-card {
+            border: 2px solid #000;
+            padding: 20px;
+            text-align: center;
+        }
+        .wireframe-title {
+            /* border-bottom: 2px solid #000; */
+            padding: 15px;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .wireframe-description {
+            /* border-bottom: 2px solid #000; */
+            padding: 10px;
+            margin-bottom: 15px;
+            min-height: 60px;
+        }
+        .wireframe-link {
+            border: 2px solid #000;
+            padding: 12px 25px;
+            background: white;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .wireframe-link:hover {
+            background: #000;
+            color: white;
+        }
+        .phase-section {
+            border: 2px solid #000;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .phase-title {
+            /* border-bottom: 2px solid #000; */
+            padding: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: #f0f0f0;
+        }
+        .features-list {
+            /* border-bottom: 2px solid #000; */
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .feature-item {
+            /* border-bottom: 2px solid #000; */
+            padding: 5px 10px;
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">Podcast Academy Platform</div>
+            <div class="subtitle">Frontend Wireframes Collection</div>
+        </div>
+
+        <div class="phase-section">
+            <div class="phase-title">Phase 1: Foundation (Days 1-2)</div>
+            <div class="wireframes-grid">
+                <div class="wireframe-card">
+                    <div class="wireframe-title">Landing Page</div>
+                    <div class="wireframe-description">
+                        Hero section, features showcase, pricing plans, testimonials, and footer with navigation.
+                    </div>
+                    <a href="landing-page.html" class="wireframe-link">View Wireframe</a>
+                </div>
+                
+                <div class="wireframe-card">
+                    <div class="wireframe-title">Authentication Forms</div>
+                    <div class="wireframe-description">
+                        Login, registration, password reset forms with validation and Google OAuth integration.
+                    </div>
+                    <a href="login-register.html" class="wireframe-link">View Wireframe</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="phase-section">
+            <div class="phase-title">Phase 2: Core Platform (Days 3-8)</div>
+            <div class="wireframes-grid">
+                <div class="wireframe-card">
+                    <div class="wireframe-title">Dashboard</div>
+                    <div class="wireframe-description">
+                        Main dashboard with statistics, charts, quick actions, recent activity, and notifications.
+                    </div>
+                    <a href="dashboard.html" class="wireframe-link">View Wireframe</a>
+                </div>
+                
+                <div class="wireframe-card">
+                    <div class="wireframe-title">Content Management</div>
+                    <div class="wireframe-description">
+                        Video upload interface, content listing, approval system, and bulk actions.
+                    </div>
+                    <a href="content-management.html" class="wireframe-link">View Wireframe</a>
+                </div>
+                
+                <div class="wireframe-card">
+                    <div class="wireframe-title">User Profile & Settings</div>
+                    <div class="wireframe-description">
+                        Profile management, security settings, notification preferences, and account activity.
+                    </div>
+                    <a href="user-profile-settings.html" class="wireframe-link">View Wireframe</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="phase-section">
+            <div class="phase-title">Phase 3: Integrations (Days 9-15)</div>
+            <div class="wireframes-grid">
+                <div class="wireframe-card">
+                    <div class="wireframe-title">Social Media Integration</div>
+                    <div class="wireframe-description">
+                        Platform connections, publishing interface, scheduling, and platform analytics.
+                    </div>
+                    <a href="social-media-integration.html" class="wireframe-link">View Wireframe</a>
+                </div>
+                
+                <div class="wireframe-card">
+                    <div class="wireframe-title">Subscription & Billing</div>
+                    <div class="wireframe-description">
+                        Plan comparison, payment methods, billing history, usage tracking, and upgrade/downgrade.
+                    </div>
+                    <a href="subscription-billing.html" class="wireframe-link">View Wireframe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

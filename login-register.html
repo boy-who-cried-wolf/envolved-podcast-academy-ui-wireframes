@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration Wireframes</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .wireframe {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #000;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-container {
+            border: 2px solid #000;
+            padding: 30px;
+            margin: 20px 0;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-title {
+            /* border-bottom: 2px solid #000; */
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            /* border-bottom: 2px solid #000; */
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .form-label {
+            /* removed box to reduce visual noise */
+            padding: 5px;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-input {
+            border: 2px solid #000;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            background: white;
+        }
+        .form-button {
+            border: 2px solid #000;
+            padding: 15px 30px;
+            background: white;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+        }
+        .social-login {
+            /* border-bottom: 2px solid #000; */
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .social-button {
+            border: 2px solid #000;
+            padding: 10px 20px;
+            background: white;
+            margin: 5px;
+            display: inline-block;
+        }
+        .divider {
+            /* remove decorative box; keep spacing */
+            padding: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .link {
+            /* remove decorative box to resemble real link */
+            padding: 5px 10px;
+            display: inline-block;
+            margin: 5px;
+            text-decoration: underline;
+            color: black;
+        }
+        .error-message {
+            /* border-bottom: 2px solid #000; */
+            padding: 10px;
+            margin: 10px 0;
+            background: #f0f0f0;
+        }
+        .success-message {
+            /* border-bottom: 2px solid #000; */
+            padding: 10px;
+            margin: 10px 0;
+            background: #f0f0f0;
+        }
+        .checkbox-group {
+            /* border-bottom: 2px solid #000; */
+            padding: 10px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .checkbox {
+            /* border-bottom: 2px solid #000; */
+            padding: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe">
+        <h1>Authentication Wireframes</h1>
+        
+        <!-- Login Form -->
+        <div class="form-container">
+            <div class="form-title">Login</div>
+            
+            <div class="form-group">
+                <div class="form-label">Email Address</div>
+                <input type="text" class="form-input" placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <div class="form-label">Password</div>
+                <input type="password" class="form-input" placeholder="Enter your password">
+            </div>
+            
+            <div class="checkbox-group">
+                <div class="checkbox">Remember me</div>
+                <div class="link">Forgot Password?</div>
+            </div>
+            
+            <button class="form-button">Login</button>
+            
+            <div class="divider">OR</div>
+            
+            <div class="social-login">
+                <div class="social-button">Login with Google</div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <div class="link">Don't have an account? Sign Up</div>
+            </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="form-container">
+            <div class="form-title">Create Account</div>
+            
+            <div class="form-group">
+                <div class="form-label">Full Name</div>
+                <input type="text" class="form-input" placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <div class="form-label">Email Address</div>
+                <input type="email" class="form-input" placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <div class="form-label">Password</div>
+                <input type="password" class="form-input" placeholder="Create a password">
+            </div>
+            
+            <div class="form-group">
+                <div class="form-label">Confirm Password</div>
+                <input type="password" class="form-input" placeholder="Confirm your password">
+            </div>
+            
+            <div class="checkbox-group">
+                <div class="checkbox">I agree to Terms of Service</div>
+                <div class="checkbox">I want to receive marketing emails</div>
+            </div>
+            
+            <button class="form-button">Create Account</button>
+            
+            <div class="divider">OR</div>
+            
+            <div class="social-login">
+                <div class="social-button">Sign Up with Google</div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <div class="link">Already have an account? Login</div>
+            </div>
+        </div>
+
+        <!-- Password Reset Form -->
+        <div class="form-container">
+            <div class="form-title">Reset Password</div>
+            
+            <div class="form-group">
+                <div class="form-label">Email Address</div>
+                <input type="email" class="form-input" placeholder="Enter your email">
+            </div>
+            
+            <button class="form-button">Send Reset Link</button>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <div class="link">Back to Login</div>
+            </div>
+        </div>
+
+        <!-- Error Messages -->
+        <div class="form-container">
+            <div class="form-title">Error Examples</div>
+            
+            <div class="error-message">
+                Invalid email or password. Please try again.
+            </div>
+            
+            <div class="error-message">
+                Email already exists. Please use a different email.
+            </div>
+            
+            <div class="error-message">
+                Password must be at least 8 characters long.
+            </div>
+            
+            <div class="success-message">
+                Password reset link sent to your email!
+            </div>
+        </div>
+    </div>
+</body>
+</html>

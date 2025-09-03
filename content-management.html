@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Management Wireframes</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .wireframe {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #000;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            border-bottom: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            padding: 10px;
+            font-weight: bold;
+        }
+        .user-menu {
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .main-layout {
+            display: flex;
+            gap: 20px;
+        }
+        .sidebar {
+            border-right: 2px solid #000;
+            padding: 20px;
+            width: 250px;
+            min-height: 600px;
+        }
+        .nav-item {
+            /* border-bottom: 2px solid #000; */
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        .nav-item.active {
+            background: #f0f0f0;
+        }
+        .main-content {
+            padding: 20px;
+            flex: 1;
+        }
+        .page-title {
+            padding: 15px;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .upload-area {
+            border: 3px dashed #000;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            background: #f9f9f9;
+        }
+        .upload-icon {
+            border: 2px solid #000;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+        }
+        .upload-button {
+            border: 2px solid #000;
+            padding: 15px 30px;
+            background: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .filters {
+            border: 2px solid #000;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .filter-input {
+            /* border-bottom: 2px solid #000; */
+            padding: 8px;
+            background: white;
+        }
+        .filter-button {
+            /* border-bottom: 2px solid #000; */
+            padding: 8px 15px;
+            background: white;
+            cursor: pointer;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .content-card {
+            border: 2px solid #000;
+            padding: 20px;
+        }
+        .content-thumbnail {
+            /* border-bottom: 2px solid #000; */
+            height: 150px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .content-title {
+            padding: 10px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .content-meta {
+            padding: 8px;
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        .status-badge {
+            /* border-bottom: 2px solid #000; */
+            padding: 5px 10px;
+            display: inline-block;
+            margin: 5px;
+            font-size: 0.8em;
+        }
+        .status-pending {
+            background: #fff3cd;
+        }
+        .status-approved {
+            background: #d4edda;
+        }
+        .status-rejected {
+            background: #f8d7da;
+        }
+        .action-buttons {
+            border-top: 1px solid #000;
+            padding: 10px;
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+        .action-btn {
+            /* border-bottom: 2px solid #000; */
+            padding: 5px 10px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
+        .modal {
+            border: 3px solid #000;
+            padding: 30px;
+            background: white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 600px;
+            width: 90%;
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+        }
+        .progress-bar {
+            border: 2px solid #000;
+            height: 20px;
+            background: white;
+            margin: 10px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: #000;
+            width: 75%;
+        }
+        .bulk-actions {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .checkbox {
+            /* border-bottom: 2px solid #000; */
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe">
+        <div class="header">
+            <div class="logo">LOGO</div>
+            <div class="user-menu">
+                <div>John Doe</div>
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <div class="sidebar">
+                <div class="nav-item">Dashboard</div>
+                <div class="nav-item active">Content</div>
+                <div class="nav-item">Social Media</div>
+                <div class="nav-item">Analytics</div>
+                <div class="nav-item">Settings</div>
+            </div>
+
+            <div class="main-content">
+                <div class="page-title">Content Management</div>
+
+                <!-- Upload Section -->
+                <div class="upload-area">
+                    <div class="upload-icon">📁</div>
+                    <h3>Upload Your Video</h3>
+                    <p>Drag and drop your video file here or click to browse</p>
+                    <div class="upload-button">Choose File</div>
+                    <div class="upload-button">Upload</div>
+                </div>
+
+                <!-- Progress Bar Example -->
+                <div style="margin-bottom: 20px;">
+                    <div>Upload Progress: 75%</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters">
+                    <input type="text" class="filter-input" placeholder="Search content...">
+                    <select class="filter-input">
+                        <option>All Status</option>
+                        <option>Pending</option>
+                        <option>Approved</option>
+                        <option>Rejected</option>
+                    </select>
+                    <select class="filter-input">
+                        <option>Sort by Date</option>
+                        <option>Sort by Title</option>
+                        <option>Sort by Status</option>
+                    </select>
+                    <div class="filter-button">Filter</div>
+                </div>
+
+                <!-- Bulk Actions -->
+                <div class="bulk-actions">
+                    <div class="checkbox"></div>
+                    <span>Select All</span>
+                    <div class="action-btn">Approve Selected</div>
+                    <div class="action-btn">Reject Selected</div>
+                    <div class="action-btn">Delete Selected</div>
+                </div>
+
+                <!-- Content Grid -->
+                <div class="content-grid">
+                    <div class="content-card">
+                        <div class="content-thumbnail">Video Thumbnail</div>
+                        <div class="content-title">How to Start a Podcast</div>
+                        <div class="content-meta">Uploaded: 2 hours ago</div>
+                        <div class="content-meta">Duration: 15:30</div>
+                        <div class="content-meta">Size: 45MB</div>
+                        <div class="status-badge status-pending">Pending Approval</div>
+                        <div class="action-buttons">
+                            <div class="action-btn">Preview</div>
+                            <div class="action-btn">Approve</div>
+                            <div class="action-btn">Reject</div>
+                            <div class="action-btn">Edit</div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="content-thumbnail">Video Thumbnail</div>
+                        <div class="content-title">Social Media Marketing Tips</div>
+                        <div class="content-meta">Uploaded: 1 day ago</div>
+                        <div class="content-meta">Duration: 22:15</div>
+                        <div class="content-meta">Size: 67MB</div>
+                        <div class="status-badge status-approved">Approved</div>
+                        <div class="action-buttons">
+                            <div class="action-btn">Preview</div>
+                            <div class="action-btn">Publish</div>
+                            <div class="action-btn">Edit</div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="content-thumbnail">Video Thumbnail</div>
+                        <div class="content-title">Content Creation Strategies</div>
+                        <div class="content-meta">Uploaded: 3 days ago</div>
+                        <div class="content-meta">Duration: 18:45</div>
+                        <div class="content-meta">Size: 52MB</div>
+                        <div class="status-badge status-rejected">Rejected</div>
+                        <div class="action-buttons">
+                            <div class="action-btn">Preview</div>
+                            <div class="action-btn">Resubmit</div>
+                            <div class="action-btn">Delete</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Approval Modal -->
+        <div class="modal-overlay">
+            <div class="modal">
+                <h3>Content Approval</h3>
+                <div class="content-thumbnail" style="height: 200px;">Video Preview</div>
+                <div class="content-title">How to Start a Podcast</div>
+                <div class="content-meta">Duration: 15:30 | Size: 45MB</div>
+                <div style="margin: 20px 0;">
+                    <textarea class="filter-input" placeholder="Add comments (optional)" style="width: 100%; height: 80px;"></textarea>
+                </div>
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                    <div class="upload-button">Approve</div>
+                    <div class="upload-button">Reject</div>
+                    <div class="upload-button">Cancel</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
